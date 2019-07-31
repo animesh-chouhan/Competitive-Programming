@@ -32,10 +32,17 @@ using namespace std;
 
 lli calc(lli n, lli *lookup){
     if(lookup[n]==NIL){
+            lli sum = n/2 + n/3 + n/4;
             // cout<<n<<" "<<sum<<" "<<(sum>=n)<<endl;
-            lli val =  max(n, calc(n/2, lookup)+calc(n/3, lookup)+calc(n/4, lookup));
-            lookup[n] = val;
-            return val;
+            if(sum>=n){
+                lli val =  calc(n/2, lookup)+calc(n/3, lookup)+calc(n/4, lookup);
+                lookup[n] = val;
+                return val;
+            }
+            else{
+                lookup[n] = n;
+                return n;
+            }
     }
     else return lookup[n];
 }
