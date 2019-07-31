@@ -20,7 +20,4 @@ int main(){
     int* r = new int(3);
     cout<<r<<" "<<&r<<" "<<*r<<"\n";
 
-
-
-
 }
