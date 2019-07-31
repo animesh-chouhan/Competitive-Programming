@@ -27,44 +27,30 @@
 #include <iostream>
 
 using namespace std;
+#define lli long long int
 #define NIL -1
 
-// int main(){
-//     for(long long int i=0; i<500; i++){
-//         int sum = i/2 + i/3 + i/4;
-//         cout<<i<<" "<<(i-sum)<<endl;
-//     }
-//     return 0;
-// }
-
-long long int calc(long long int n, long long int *lookup){
+lli calc(lli n, lli *lookup){
     if(lookup[n]==NIL){
-            long long int sum = n/2 + n/3 + n/4;
             // cout<<n<<" "<<sum<<" "<<(sum>=n)<<endl;
-            if(sum>=n){
-                long long int val =  calc(n/2, lookup)+calc(n/3, lookup)+calc(n/4, lookup);
-                lookup[n] = val;
-                return val;
-            }
-            else{
-                lookup[n] = n;
-                return n;
-            }
+            lli val =  max(n, calc(n/2, lookup)+calc(n/3, lookup)+calc(n/4, lookup));
+            lookup[n] = val;
+            return val;
     }
     else return lookup[n];
 }
 
 int main(){
-    long long int N;
+    lli N;
     while(1){
         cin>>N;
         if(N==0){
             cout<<0<<endl;
             continue;
         }
-        long long int *lookup = new long long int[N+1];
+        lli *lookup = new lli[N+1];
         for(int i=0; i<=N; i++) lookup[i]=NIL;
-        long long int max = calc(N, lookup);
+        lli max = calc(N, lookup);
         cout<<max<<endl;
         // for(int i=0; i<=N; i++) cout<<lookup[i]<<endl;
     }
