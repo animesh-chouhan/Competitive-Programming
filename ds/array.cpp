@@ -4,6 +4,12 @@ using namespace std;
 
 // array declaration 
 
+void printing(int *arr){
+    for(int i=0;i<10;i++){
+        cout<<arr[i]<<endl;
+    }
+}
+
 #define N 20
 int main(){
     // int a[N] = {};
@@ -19,5 +25,8 @@ int main(){
 
     int* r = new int(3);
     cout<<r<<" "<<&r<<" "<<*r<<"\n";
+
+    int array[10] = {2, 5, 10};
+    printing(array);
 
 }
