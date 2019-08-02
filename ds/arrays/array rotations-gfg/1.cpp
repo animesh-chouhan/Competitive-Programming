@@ -40,10 +40,8 @@ int rotate3(int arr[], int d, int n){
 
 // method 4
 int gcd(int a, int b){
-    if(a==0) return b;
     if(b==0) return a;
-    if(b%a==0) return a;
-    else gcd(b%a, a);
+    gcd(b, a%b);
 
 }
 
@@ -55,6 +53,5 @@ int main(){
     for(int i=0;i<n;i++) array[i]=i; 
 
     rotate3(array, 5, n); 
-    cout<<gcd(0,11)<<"\n"; 
 }
 
