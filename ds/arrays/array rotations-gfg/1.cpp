@@ -42,7 +42,10 @@ int rotate3(int arr[], int d, int n){
 int gcd(int a, int b){
     if(b==0) return a;
     gcd(b, a%b);
+}
 
+int rotate4(int arr[], int d, int n){
+    
 }
 
 
