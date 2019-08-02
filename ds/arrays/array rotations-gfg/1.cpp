@@ -45,7 +45,8 @@ int gcd(int a, int b){
 }
 
 int rotate4(int arr[], int d, int n){
-    
+    int step=gcd(n,d);
+    int t=d/step;
 }
 
 
@@ -55,6 +56,6 @@ int main(){
     int array[n];
     for(int i=0;i<n;i++) array[i]=i; 
 
-    rotate3(array, 5, n); 
+    rotate4(array, 8, n); 
 }
 
