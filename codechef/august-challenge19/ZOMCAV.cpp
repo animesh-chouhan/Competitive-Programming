@@ -2,7 +2,7 @@
 #include <algorithm>
 
 using namespace std;
-#define lli long long int
+#define lli int
 
 void print(lli arr[], lli n){
     for(int i=0; i<n; i++) cout<<arr[i];
