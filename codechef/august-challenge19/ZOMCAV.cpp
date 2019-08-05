@@ -18,6 +18,7 @@ int main(){
         for(int i=0; i<n; i++) cin>>c[i];
         for(int i=0; i<n; i++) cin>>h[i];
         lli l[n]={};
+        
         for(int i=1; i<=n; i++){
             lli left = ((i-c[i-1])>=1)?(i-c[i-1]):1;
             lli right = ((i+c[i-1])<=n)?(i+c[i-1]):n;
@@ -25,18 +26,23 @@ int main(){
                 l[j-1]++;
             }
         }
-        // sort(h, h+n);
-        // sort(l, l+n);
+        sort(h, h+n);
+        sort(l, l+n);
         // print(h, n);
         // print(l, n);
 
-        lli sum1=0, sum2=0;
-        for(int i=0; i<n; i++){
-            sum1+=h[i];
-            sum2+=l[i];
-        }
-        if(sum1!=sum2) cout<<"NO"<<"\n";
+        bool flag=true;
+        for(int i=0; i<n; i++) if(h[i]!=l[i]) flag=false;
+        if(!flag) cout<<"NO"<<"\n";
         else cout<<"YES"<<"\n";
+
+        // lli sum1=0, sum2=0;
+        // for(int i=0; i<n; i++){
+        //     sum1+=h[i];
+        //     sum2+=l[i];
+        // }
+        // if(sum1!=sum2) cout<<"NO"<<"\n";
+        // else cout<<"YES"<<"\n";
 
     }
     return 0;
