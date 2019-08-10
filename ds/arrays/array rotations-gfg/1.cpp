@@ -60,21 +60,19 @@ int gcd(int a, int b)
 int rotate4(int arr[], int d, int n)
 {
         int step = gcd(n, d);
-        int t = d / step;
-
-        while (d-- >= 0)
+        while (d> 0)
         {
                 for (int i = 0; i < step; i++)
                 {
                         int temp = arr[i];
-                        cout << d << endl;
                         for (int j = i; j < n - step; j += step)
                         {
-                                arr[j] = arr[j + step];
-                                printarray(arr, n);
+                                arr[j] = arr[j + step];        
                         }
                         arr[n - step + i] = temp;
+                        printarray(arr, n);
                 }
+                d=d-1;
         }
 }
 
@@ -85,5 +83,5 @@ int main()
         for (int i = 0; i < n; i++)
                 array[i] = i;
 
-        rotate4(array, 8, n);
+        rotate4(array, 3, n);
 }
