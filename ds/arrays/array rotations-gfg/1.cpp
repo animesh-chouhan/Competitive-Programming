@@ -1,11 +1,13 @@
 #include <iostream>
+#include <algorithm>
+#include <array>
 
 using namespace std;
 
 void printarray(int arr[], int n)
 {
         for (int i = 0; i < n; i++)
-                cout << arr[i];
+                cout << arr[i]<<" ";
         cout << "\n";
 }
 
@@ -76,6 +78,11 @@ int rotate4(int arr[], int d, int n)
         }
 }
 
+bool compare(int num1, int num2)
+{
+        return(num1>num2);
+} 
+
 int main()
 {
         int n = 10;
@@ -84,4 +91,5 @@ int main()
                 array[i] = i;
 
         rotate4(array, 3, n);
+ 
 }

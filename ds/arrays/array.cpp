@@ -1,4 +1,6 @@
 #include <iostream>
+#include <algorithm>
+#include <array>
 
 using namespace std;
 
@@ -13,6 +15,13 @@ void printing(int *arr){
 #define N 20
 
 int a;
+
+void printarray(int arr[], int n)
+{
+        for (int i = 0; i < n; i++)
+                cout << arr[i]<<" ";
+        cout << "\n";
+}
 
 int main(){
     // int a[N] = {};
@@ -31,5 +40,20 @@ int main(){
 
     cout<<a;
 
+    int arr1[] = {1, 9, 4, 5, 2, 13, 11};
+    int l =sizeof(arr1)/sizeof(arr1[0]);
+    printarray(arr1, l);
+    sort(arr1, arr1+l);
+    printarray(arr1, l);
+
+    sort(arr1, arr1+l, greater<int>());
+    printarray(arr1, l);
+
+    int a[] = {14, 21, 23, 42, 35};
+
+    array<int, 5> myarr; 
+    myarr[0]=1;
+    auto it1 = myarr.front();
+    cout<<it1<<endl;
 
 }
