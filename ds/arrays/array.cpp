@@ -11,6 +11,9 @@ void printing(int *arr){
 }
 
 #define N 20
+
+int a;
+
 int main(){
     // int a[N] = {};
     // for(int i=0; i<N; i++) cout<<a[i]<<endl;
@@ -26,7 +29,7 @@ int main(){
     int* r = new int(3);
     cout<<r<<" "<<&r<<" "<<*r<<"\n";
 
-    int array[10] = {2, 5, 10};
-    printing(array);
+    cout<<a;
+
 
 }
