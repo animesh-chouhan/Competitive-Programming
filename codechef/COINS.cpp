@@ -1,3 +1,6 @@
+//Fucking while(cin>>n) leading to TLE
+
+
 /*
     DYNAMIC PROGRAMMING
     Soln:
@@ -23,44 +26,64 @@
             }
     }
 */
+// int main()
+// {
+//     for(int i=0; i<30; i++)
+//     {
+//         int cond = i - (i/2+i/3+i/4);
+//         cout<<i<<" "<<cond<<"\n";
+
+//     }
+// }
 
 #include <iostream>
 
 using namespace std;
 #define lli long long int
-#define NIL -1
 
-lli calc(lli n, lli *lookup){
-    if(lookup[n]==NIL){
-            lli sum = n/2 + n/3 + n/4;
-            // cout<<n<<" "<<sum<<" "<<(sum>=n)<<endl;
-            if(sum>=n){
-                lli val =  calc(n/2, lookup)+calc(n/3, lookup)+calc(n/4, lookup);
-                lookup[n] = val;
-                return val;
-            }
-            else{
-                lookup[n] = n;
-                return n;
-            }
-    }
-    else return lookup[n];
+lli calc(lli n, lli* lookup){
+    if(n<12) return n;
+    // for(int i=0; i<=n; i++) cout<<lookup[i]<<"\n";
+    // cout<<"\n";
+    if(lookup[n]!=0)
+        return lookup[n];
+    lookup[n] = calc(n/2, lookup)+calc(n/3, lookup)+calc(n/4, lookup);
+    return lookup[n];
 }
 
 int main(){
-    lli N;
-    while(1){
-        cin>>N;
-        if(N==0){
-            cout<<0<<endl;
-            continue;
-        }
-        lli *lookup = new lli[N+1];
-        for(int i=0; i<=N; i++) lookup[i]=NIL;
-        lli max = calc(N, lookup);
-        cout<<max<<endl;
-        // for(int i=0; i<=N; i++) cout<<lookup[i]<<endl;
+    lli n;
+     
+    while(cin>>n){
+        lli *lookup=new lli [n+1];
+        // for(int i=0; i<=n; i++) lookup[i]=-1;
+        // for(int i=0; i<=n; i++) cout<<lookup[i];
+        cout<<calc(n, lookup)<<"\n";
     }
     
     return 0;
 }
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// long long int  rec_fun(long long int *arr,long long int n)
+// {
+//     if(n==0)return 0;
+//     if(arr[n]!=0)return arr[n];
+//     arr[n]=max(n,rec_fun(arr,n/2)+rec_fun(arr,n/3)+rec_fun(arr,n/4));
+//     return arr[n];
+// }
+// int main()
+// {
+//     long long int n;
+//     while(cin>>n)
+//     {
+//         long long int *arr=new long long int [n+1];
+//         cout<<rec_fun(arr,n)<<endl;
+//     }
+//      return 0;
+// }
