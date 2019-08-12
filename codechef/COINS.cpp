@@ -61,6 +61,7 @@ int main(){
         cout<<calc(n, lookup)<<"\n";
     }
     
+    
     return 0;
 }
 
