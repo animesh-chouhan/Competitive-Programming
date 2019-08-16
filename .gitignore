@@ -10,3 +10,7 @@ ds/arrays/array
 codechef/COINS
 ds/stack/stack
 ds/vectors/vector
+sorting/insertion
+.gitignore
+stl/string
+stl/template
