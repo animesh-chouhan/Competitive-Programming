@@ -14,3 +14,4 @@ sorting/insertion
 .gitignore
 stl/string
 stl/template
+sorting/mergesort

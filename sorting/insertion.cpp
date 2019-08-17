@@ -58,6 +58,8 @@ T insertion_sort2(T *arr, int n, bool desc=false)
     }
 }
 
+
+
 int main()
 {
     float arr[] = {6.2, 2.2, 0.5, 3.1, 2.4, 9.7, 1, 8};
