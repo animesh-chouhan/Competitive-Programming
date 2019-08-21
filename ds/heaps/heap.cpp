@@ -13,16 +13,16 @@ int parent(int index, int n)
 int leftChild(int index, int n)
 {
     int val = index * 2 + 1;
-    if (index < 0 || val>n)
+    if (index < 0 || val > n)
         return -1;
     else
         return val;
 }
 
 int rightChild(int index, int n)
-{   
+{
     int val = index * 2 + 2;
-    if (index < 0 || val>n)
+    if (index < 0 || val > n)
         return -1;
     else
         return val;
@@ -30,26 +30,55 @@ int rightChild(int index, int n)
 
 void maxHeapify(int *heap, int n, int k)
 {
-    for(int i=0;i<=n; i++) cout<<heap[i]<<" ";
-    cout<<"\n";
-    if (k <= (n - 2) / 2)
+    for (int i = 0; i <= n; i++)
+        cout << heap[i] << " ";
+    cout << "\n";
+
+    int temp = heap[k];
+    int right = rightChild(k, n);
+    int left = leftChild(k, n);
+
+    if (left != -1 && right != -1)
     {
-        int temp = heap[k];
-        int right = rightChild(k, n);
-        int left = leftChild(k, n);
+        int max = heap[k];
+        if (heap[right] > max)
+            max = heap[right];
+        else if (heap[left] > max)
+            max = heap[left];
 
-
-        if (heap[k] < heap[right] && heap[right] >= heap[left])
+        if (heap[right] == max)
         {
             heap[k] = heap[right];
             heap[right] = temp;
             maxHeapify(heap, n, right);
         }
-        else if (heap[k] < heap[left] && heap[left] >= heap[right])
+        else if (heap[left] == max)
         {
             heap[k] = heap[left];
             heap[left] = temp;
             maxHeapify(heap, n, left);
+        }
+    }
+
+    else if (left != -1 && right == -1)
+    {
+
+        if (heap[left] > heap[k])
+        {
+            heap[k] = heap[left];
+            heap[left] = temp;
+            maxHeapify(heap, n, left);
+        }
+    }
+
+    else if (left == -1 && right != -1)
+    {
+
+        if (heap[left] > heap[k])
+        {
+            heap[k] = heap[right];
+            heap[right] = temp;
+            maxHeapify(heap, n, right);
         }
     }
 }
