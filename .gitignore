@@ -15,3 +15,6 @@ sorting/insertion
 stl/string
 stl/template
 sorting/mergesort
+algorithms/binsearch/binsearch
+algorithms/sorting/insertion
+algorithms/sorting/mergesort
