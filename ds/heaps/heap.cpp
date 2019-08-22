@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -28,11 +29,26 @@ int rightChild(int index, int n)
         return val;
 }
 
-void maxHeapify(int *heap, int n, int k)
+void printHeap(int* heap, int n)
+{   
+    int j=2;
+    for(int i=0; i<=n; i++)
+    {
+        cout<<heap[i]<<" ";
+        if(i == j-2)
+        {
+            cout<<"\n";
+            j*=2;
+        }
+    }
+    cout<<"\n";
+}
+
+void maxHeapify(int* heap, int n, int k)
 {
-    for (int i = 0; i <= n; i++)
-        cout << heap[i] << " ";
-    cout << "\n";
+    // for (int i = 0; i <= n; i++)
+    //     cout << heap[i] << " ";
+    // cout << "\n";
 
     int temp = heap[k];
     int right = rightChild(k, n);
@@ -43,7 +59,7 @@ void maxHeapify(int *heap, int n, int k)
         int max = heap[k];
         if (heap[right] > max)
             max = heap[right];
-        else if (heap[left] > max)
+        if (heap[left] > max)
             max = heap[left];
 
         if (heap[right] == max)
@@ -83,26 +99,52 @@ void maxHeapify(int *heap, int n, int k)
     }
 }
 
-// void buildMaxHeap(int *heap, int n)
-// {
-//     for(int i=0;i<=n; i++) cout<<heap[i]<<" ";
-//     cout<<"\n";
+void buildMaxHeap(int *heap, int n)
+{
 
-//     for(int i=0; i<=n; i++)
-//         maxHeapify(heap, n , i);
+    for(int i=n; i>=0; i--)
+        maxHeapify(heap, n , i);
 
-// }
+}
+
+void heapSort(int *heap, int n)
+{   
+    int sorted[n+1]; 
+    for(int i=0; i<=n ;i++)
+    {   
+        buildMaxHeap(heap, n-i);
+        sorted[i] = heap[0];
+        heap[0] = heap[n-i];
+    }
+    
+    for(int i=0; i<=n ; i++) cout<<sorted[i]<<" ";
+    cout<<"\n";
+}
+
 
 int main()
 {
     int heap[] = {16, 4, 10, 14, 7, 9, 3, 2, 8, 1};
     int n = sizeof(heap) / sizeof(heap[0]) - 1;
 
-    cout << parent(1, n) << "\n";
-    cout << leftChild(2, n) << "\n";
-    cout << parent(n, n) << "\n";
-    cout << leftChild(3, n) << "\n";
-    cout << rightChild(3, n) << "\n";
+    // cout << parent(1, n) << "\n";
+    // cout << leftChild(2, n) << "\n";
+    // cout << parent(n, n) << "\n";
+    // cout << leftChild(3, n) << "\n";
+    // cout << rightChild(3, n) << "\n";
 
+    printHeap(heap, n);
     maxHeapify(heap, n, 1);
+    cout<<"\n";
+    printHeap(heap, n);
+    cout<<"\n";
+
+    int heap2[] = {1, 8, 2, 3, 9, 7, 14, 10, 4, 16};
+    int n2=sizeof(heap2) / sizeof(heap2[0]) - 1;
+    printHeap(heap2, n2);
+    buildMaxHeap(heap2, n2);
+    cout<<"\n";
+    printHeap(heap2, n2);
+    cout<<"\n";
+    heapSort(heap2, n);
 }
