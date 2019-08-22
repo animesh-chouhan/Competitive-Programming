@@ -102,7 +102,7 @@ void maxHeapify(int* heap, int n, int k)
 void buildMaxHeap(int *heap, int n)
 {
 
-    for(int i=n; i>=0; i--)
+    for(int i=n/2; i>=0; i--)
         maxHeapify(heap, n , i);
 
 }
