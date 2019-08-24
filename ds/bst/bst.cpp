@@ -64,6 +64,19 @@ void inorder(node *root)
     // cout<<root->val<<"\n";
 }
 
+bool search(node* root, int key)
+{   
+    if(root == nullptr)
+        return false;
+
+    if(key == root->val)
+        return true;
+    else if(key > root->val)
+        return search(root->right, key);
+    else 
+        return search(root->left, key);
+}
+
 int main()
 {
     int a[] = {3, 4, 1, 2, 5, 9, 7};
@@ -78,5 +91,7 @@ int main()
     for(int i=0;i<n; i++)   insert(a[i], &root);
 
     inorder(&root);
+
+    cout<<"search "<<search(&root, -1)<<"\n";
 
 }
