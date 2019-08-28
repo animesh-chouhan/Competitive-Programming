@@ -20,3 +20,4 @@ algorithms/sorting/insertion
 algorithms/sorting/mergesort
 ds/heaps/heap
 ds/bst/bst
+stl/range-for-loop
