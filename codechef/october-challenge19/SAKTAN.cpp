@@ -39,7 +39,8 @@
 
 using namespace std;
 
-int main() {
+int main() 
+{
 	lli t,n,m,q;
 	cin>>t;
 	
