@@ -31,6 +31,7 @@ int main()
                 {
                     v.push_back(a[i]);
                     b.push_back(v);
+                    v.clear();
                 }
         
             }
