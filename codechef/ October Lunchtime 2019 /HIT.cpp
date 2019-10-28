@@ -6,33 +6,29 @@ using namespace std;
 
 int main()
 {
-    ll t,n,val;
+    ll t,n,val,step;
     cin>>t;
     while(t--)
     {
         cin>>n;
-        set<int> a;
+        step=n/4;
+        vector<int> a;
 
         for(int i=0;i<n;i++)
         {
             cin>>val;
-            a.insert(val);
+            a.push_back(val);
         }
-        if(n!=a.size())
+        sort(a.begin(),a.end());
+        if(a[n/4]==a[n/4-1]||a[2*n/4]==a[2*n/4-1]||a[3*n/4]==a[3*n/4-1])
         {
-            cout<<-1<<"\n";    
+            cout<<-1<<"\n";   
         }
         else
         {   
-            vector<int> b;
-            for(auto x:a)
-            {
-                b.push_back(x);
-            }
-            int step=n/4;
             for(int i=step;i<n;i+=step)
             {
-                cout<<b[i]<<" ";
+                cout<<a[i]<<" ";
             }
             cout<<"\n";
         }
