@@ -62,9 +62,29 @@ T insertion_sort2(T *arr, int n, bool desc=false)
 
 int main()
 {
-    float arr[] = {6.2, 2.2, 0.5, 3.1, 2.4, 9.7, 1, 8};
-    // int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
-    print(arr, 8);
-    insertion_sort2(arr, 8, true);
-    print(arr, 8);
+    int t,n;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        int arr[n],chk[n];
+        for(int i=0;i<n;++i)
+        {
+            cin>>arr[i];
+        }
+        insertion_sort1(arr,n);
+        for(int i=0;i<n;++i)
+        {
+            cin>>chk[i];
+            if(chk[i]!=arr[i])
+            {
+                cout<<"Fuck You!!"<<endl;
+                return -1;
+            }
+                
+        }
+        cout<<".";
+    }
+    cout<<"\n"<<"Fuckin Yes!!"<<"\n";
+    return 0;
 }
