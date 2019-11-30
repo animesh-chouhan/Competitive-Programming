@@ -6,20 +6,21 @@ using namespace std;
 
 int main()
 {
-    ll t;
-    float n;
+    ll t,n;
     cin>>t;
     while(t--)
     {
         cin>>n;
-        vector<ll> v;
-        for(int i=0;i<=sqrt(n);++i)
+        set<ll> s;
+        for(int i=0;i<=n/2;++i)
         {
-            v.push_back(i);
+            cout<<i<<" ";
         }
-        if(n/v.back!=v.back)
-            v.push_back(n/v.)
         cout<<n<<"\n";
+        cout<<s.size()<<"\n";
+        for(auto x:s)
+            cout<<x<<" ";
+        cout<<"\n";
     }
     return 0;
 }

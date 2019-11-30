@@ -11,13 +11,13 @@ int main()
     while(t--)
     {
         cin>>n;
-        map<int,int> m;
+        set<int> s;
         for(int i;i<n;++i)
         {
             cin>>val;
-            m[val];
+            s.insert(val);
         }
-        cout<<n-int(s.size())-1<<"\n";
+        cout<<n-int(s.size())-1;
     }
     return 0;
 }
