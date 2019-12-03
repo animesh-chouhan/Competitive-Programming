@@ -12,11 +12,15 @@ int main()
     {
         cin>>n;
         set<ll> s;
-        for(int i=0;i<=n/2;++i)
+        for(int i=0;i<=sqrt(n);++i)
         {
-            cout<<i<<" ";
+            s.insert(i);
         }
-        cout<<n<<"\n";
+        for(auto x:s)
+        {
+            if(x)
+                s.insert(n/x);
+        }
         cout<<s.size()<<"\n";
         for(auto x:s)
             cout<<x<<" ";
