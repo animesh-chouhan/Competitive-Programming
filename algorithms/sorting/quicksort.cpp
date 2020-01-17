@@ -1,9 +1,27 @@
+<<<<<<< HEAD
 #include <iostream>
 #include <array>
 #include <algorithm>
 
 using namespace std;
 
+=======
+#include <bits/stdc++.h>
+
+typedef long long ll;
+typedef long double ld;
+
+#define fast() ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+#define test(t) ll t;cin>>t;while(t--)
+#define pp pair<ll,ll>
+
+using namespace std;
+
+const ll N = 100005;
+const int mod = 1000000007;
+const long long int inf = 1e10+5;
+
+>>>>>>> 7096f118fd10542f68b8dd7c29dac961285d27d9
 int partition(int* arr,int p,int r)
 {
     int tmp,piv=arr[r];
@@ -43,6 +61,10 @@ int main()
     // for(int i=0;i<n;++i)
     //     cout<<arr[i]<<" ";
     // cout<<endl;
+<<<<<<< HEAD
+=======
+    fast();
+>>>>>>> 7096f118fd10542f68b8dd7c29dac961285d27d9
     
     int t,n;
     cin>>t;
@@ -63,7 +85,14 @@ int main()
                 cout<<"Fuck You!!"<<endl;
                 return -1;
             }
+<<<<<<< HEAD
                 
+=======
+            else
+            {
+                cout<<".";
+            }      
+>>>>>>> 7096f118fd10542f68b8dd7c29dac961285d27d9
         }
         cout<<".";
     }

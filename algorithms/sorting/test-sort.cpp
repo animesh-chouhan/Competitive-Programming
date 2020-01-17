@@ -32,5 +32,9 @@ int main()
         }
         cout<<arr[n-1]<<"\n";
     }
+<<<<<<< HEAD
+=======
+    cout<<"Done!"<<"\n";
+>>>>>>> 7096f118fd10542f68b8dd7c29dac961285d27d9
     return 0;
 }
