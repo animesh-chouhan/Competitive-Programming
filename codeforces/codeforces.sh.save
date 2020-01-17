@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Input the competition:"
+echo "1.codeforces"
+echo "2.codechef"
+echo "3.leetcode"
+read OPTION
+case $OPTION in
+	1)
+		
+read NAME
+echo $NAME

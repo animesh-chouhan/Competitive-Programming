@@ -1,0 +1,24 @@
+#!/bin/bash
+echo "Enter the name of competition:"
+read NAME
+
+echo "Enter the competition type:"
+echo " 1.codeforces"
+echo " 2.codechef"
+read OPTION
+
+case $OPTION in
+	"1")	cd "/home/animesh/cp/codeforces"
+		mkdir "$NAME"
+		cd "$NAME"
+		for i in {A..E}
+		do
+			touch "$i.cpp"
+		done
+		code "/home/animesh/cp"
+		;;
+	*)	mkdir "$NAME"
+		echo "Launching VScode anyways!"
+		;;
+
+esac

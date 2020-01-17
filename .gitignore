@@ -21,3 +21,8 @@ algorithms/sorting/mergesort
 ds/heaps/heap
 ds/bst/bst
 stl/range-for-loop
+.vscode/launch.json
+.vscode/settings.json
+tempCodeRunnerFile.cpp
+tempCodeRunnerFile
+.vscode/tasks.json

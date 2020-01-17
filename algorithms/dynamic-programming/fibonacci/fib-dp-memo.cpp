@@ -6,7 +6,6 @@
 using namespace std;
 
 const int NIL=-1;
-
 int memo[N];
 
 void init()

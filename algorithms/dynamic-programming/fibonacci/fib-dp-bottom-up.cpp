@@ -6,7 +6,6 @@
 using namespace std;
 
 const int NIL=-1;
-
 int memo[N];
 
 void init()
@@ -23,9 +22,10 @@ int fib(int n)
 {   
     if(n>1)
     {
+        int val;
         for(int i=2;i<=n;i++)
         {
-            int val=memo[i-1]+memo[i-2];
+            val=memo[i-1]+memo[i-2];
             memo[i]=val;
         }
     }
