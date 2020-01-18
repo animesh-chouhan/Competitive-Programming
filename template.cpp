@@ -10,7 +10,7 @@ typedef long double ld;
 using namespace std;
 
 const ll N = 100005;
-const int mod = 1000000007;
+const int MOD = 1000000007;
 const long long int inf = 1e10+5;
 
 int main()
