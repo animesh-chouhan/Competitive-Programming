@@ -50,15 +50,7 @@ int main()
                     bool flag = true;
                     for (int k = 1; k <= l / 2; ++k)
                     {
-                        if (a[i + k][j] != a[i - k][j])
-                        {
-                            flag = false;
-                            break;
-                        }
-                    }
-                    for (int k = 1; k <= l / 2; ++k)
-                    {
-                        if (a[i][j + k] != a[i][j - k])
+                        if (a[i + k][j] != a[i - k][j] || a[i][j + k] != a[i][j - k])
                         {
                             flag = false;
                             break;
