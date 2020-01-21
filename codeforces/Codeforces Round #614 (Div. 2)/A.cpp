@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-typedef int ll;
+typedef long long ll;
 typedef long double ld;
 
 #define fast()                        \
@@ -17,7 +17,7 @@ using namespace std;
 
 const ll N = 100005;
 const int MOD = 1000000007;
-const long long int inf = 1e10 + 5;
+const long long int INF = 1e10 + 5;
 
 int main()
 {
@@ -27,26 +27,27 @@ int main()
         ll n, s, k;
         cin >> n >> s >> k;
 
-        set<ll> a;
         ll tmp;
+        vector<ll> c;
         for (int i = 0; i < k; ++i)
         {
             cin >> tmp;
-            a.insert(tmp - s);
+            c.push_back(tmp);
         }
 
-        for (auto x : a)
-            cout << x << " ";
-
-        cout << "\n";
-        // for (set<int>::iterator it = a.begin(); it != a.end(); ++it)
-        // {
-        //     if (*it != (it - a.begin()))
-        //     {
-        //         cout << i << "\n";
-        //         break;
-        //     }
-        // }
+        for (int i = 0; i <= k; ++i)
+        {
+            if (s - i >= 1 && find(c.begin(), c.end(), s - i) == c.end())
+            {
+                cout << i << "\n";
+                break;
+            }
+            if (s + i <= n && find(c.begin(), c.end(), s + i) == c.end())
+            {
+                cout << i << "\n";
+                break;
+            }
+        }
     }
     return 0;
 }
