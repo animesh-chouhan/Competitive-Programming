@@ -1,26 +1,4 @@
-ds/array
-ds/arrays/array rotations-gfg/1
-codechef/august-challenge19/DSTAPLS
-codechef/august-challenge19/CHEFDIL
-ds/recursion/factorial
-ds/recursion/logOfFacN
-codechef/august-challenge19/ZOMCAV
-codechef/august-challenge19/ENCODING
-ds/arrays/array
-codechef/COINS
-ds/stack/stack
-ds/vectors/vector
-sorting/insertion
-.gitignore
-stl/string
-stl/template
-sorting/mergesort
-algorithms/binsearch/binsearch
-algorithms/sorting/insertion
-algorithms/sorting/mergesort
-ds/heaps/heap
-ds/bst/bst
-stl/range-for-loop
+.vscode/*
 .vscode/launch.json
 .vscode/settings.json
 tempCodeRunnerFile.cpp
