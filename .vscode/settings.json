@@ -5,7 +5,8 @@
         "array": "cpp",
         "new": "cpp",
         "string_view": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "bitset": "cpp"
     },
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
