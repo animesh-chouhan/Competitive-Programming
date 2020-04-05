@@ -78,7 +78,17 @@ public:
     {
         for (int i = 0; i < V; ++i)
         {
-            cout << "BFS distance of Node " << i << " = " << nodes[i].dist << "\n";
+            int distance = nodes[i].dist;
+            if (distance == INF)
+            {
+                cout << "BFS distance of Node " << i << " = "
+                     << "INF"
+                     << "\n";
+            }
+            else
+            {
+                cout << "BFS distance of Node " << i << " = " << nodes[i].dist << "\n";
+            }
         }
     }
 
@@ -111,7 +121,7 @@ int main()
     g.add_edge(2, 3);
     g.add_edge(3, 3);
 
-    g.BFS(1);
+    g.BFS(3);
     g.print_distances();
     g.print_parents();
 
