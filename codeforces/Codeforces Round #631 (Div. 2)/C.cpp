@@ -11,12 +11,6 @@ typedef long double ld;
     ll t;       \
     cin >> t;   \
     while (t--)
-#define print(list)       \
-    for (auto x : list)   \
-    {                     \
-        cout << x << " "; \
-    }                     \
-    cout << "\n";
 #define pp pair<ll, ll>
 
 using namespace std;

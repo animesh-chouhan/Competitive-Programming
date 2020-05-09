@@ -7,6 +7,7 @@ typedef long double ld;
     ios_base::sync_with_stdio(false); \
     cin.tie(0);                       \
     cout.tie(0)
+    
 #define test(t) \
     ll t;       \
     cin >> t;   \
