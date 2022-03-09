@@ -5,14 +5,15 @@ def binarySearch(arr, l, r, key):
     if(arr[mid] == key):
         print(arr[mid], key)
         return mid
-    
-    if(l==r):
+
+    if(l == r):
         return -1
 
     if(arr[mid] > key):
         return binarySearch(arr, l, mid-1, key)
     else:
         return binarySearch(arr, mid+1, r, key)
+
 
 def main():
     arr = [2, 3, 5, 6, 8, 9, 14]
